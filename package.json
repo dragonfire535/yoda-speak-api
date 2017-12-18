@@ -1,0 +1,52 @@
+{
+	"name": "yoda-speak-api",
+	"version": "1.0.0",
+	"description": "Convert text to Yoda Speak.",
+	"main": "index.js",
+	"scripts": {
+		"test": "npm run lint",
+		"lint": "eslint . --ext .js --ext .json",
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://bitbucket.org/dragonfire535/yoda-speak-api.git"
+	},
+	"keywords": [
+		"api",
+		"yoda",
+		"yoda-speak",
+		"yoda-converter"
+	],
+	"author": "dragonfire535 <danielbodendahl@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://bitbucket.org/dragonfire535/yoda-speak-api/issues"
+	},
+	"homepage": "https://bitbucket.org/dragonfire535/yoda-speak-api#readme",
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"dependencies": {
+		"express": "^4.16.2",
+		"soap": "^0.23.0"
+	},
+	"devDependencies": {
+		"eslint": "^4.13.0",
+		"eslint-config-aqua": "^2.0.1",
+		"eslint-plugin-json": "^1.2.0"
+	},
+	"eslintConfig": {
+		"extends": "aqua",
+		"plugins": [
+			"json"
+		],
+		"rules": {
+			"camelcase": "off",
+			"id-length": "off",
+			"no-await-in-loop": "off",
+			"no-console": "off",
+			"no-process-env": "off"
+		}
+	}
+}
