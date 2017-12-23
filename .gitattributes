@@ -7,9 +7,3 @@
 .gitattributes text eol=lf
 .gitignore text eol=lf
 .npmrc text eol=lf
-
-# Asset Files
-*.png binary
-*.mp3 binary
-*.ttf binary
-*.otf binary
