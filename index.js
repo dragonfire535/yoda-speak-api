@@ -13,7 +13,7 @@ app.get('/', async (req, res) => {
 		const response = await client.yodaTalkAsync({ inputText: req.query.text });
 		return res.status(200).json({ version, response: response.return });
 	} catch (err) {
-		return res.status(500).json({ error: err.message });
+		return res.status(500).json({ version, error: err.message });
 	}
 });
 
