@@ -1,6 +1,6 @@
 {
 	"name": "yoda-speak-api",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Convert text to Yoda Speak.",
 	"main": "index.js",
 	"scripts": {
@@ -32,7 +32,7 @@
 		"soap": "^0.23.0"
 	},
 	"devDependencies": {
-		"eslint": "^4.16.0",
+		"eslint": "^4.17.0",
 		"eslint-config-aqua": "^2.0.1",
 		"eslint-plugin-json": "^1.2.0"
 	},
@@ -46,7 +46,8 @@
 			"id-length": "off",
 			"no-await-in-loop": "off",
 			"no-console": "off",
-			"no-process-env": "off"
+			"no-process-env": "off",
+			"prefer-const": "error"
 		}
 	}
 }
