@@ -12,7 +12,7 @@ app.get('/', async (req, res) => {
 	try {
 		const client = await soap.createClientAsync('https://www.yodaspeak.co.uk/webservice/yodatalk.php?wsdl');
 		const response = await client.yodaTalkAsync({ inputText: req.query.text });
-		return res.status(200).json({ version, response: response.return });
+		return res.status(200).json({ version, response: response[0].return });
 	} catch (err) {
 		return res.status(500).json({ version, error: err.message });
 	}
