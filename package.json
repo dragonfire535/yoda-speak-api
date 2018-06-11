@@ -1,6 +1,6 @@
 {
 	"name": "yoda-speak-api",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Convert text to Yoda Speak.",
 	"main": "index.js",
 	"scripts": {
