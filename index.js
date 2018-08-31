@@ -7,9 +7,7 @@ const { version } = require('./package');
 const { ACCESS_TOKENS, PORT } = process.env;
 const tokens = ACCESS_TOKENS.split(',');
 
-app.get('/', (req, res) => {
-	return send(res, 200, { version });
-});
+app.get('/', (req, res) => send(res, 200, { version }));
 
 app.get('/speak', async (req, res) => {
 	if (!req.query.token) return send(res, 400, { version, error: 'The parameter "token" is required.' });
