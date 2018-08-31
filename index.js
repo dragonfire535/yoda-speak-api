@@ -1,20 +1,26 @@
+require('dotenv').config();
 const soap = require('soap');
-const express = require('express');
-const app = express();
+const polka = require('polka');
+const send = require('@polka/send-type');
+const app = polka();
 const { version } = require('./package');
 const { ACCESS_TOKENS, PORT } = process.env;
 const tokens = ACCESS_TOKENS.split(',');
 
-app.get('/', async (req, res) => {
-	if (!req.query.token) return res.status(400).json({ version, error: 'The parameter "token" is required.' });
-	if (!tokens.includes(req.query.token)) return res.status(401).json({ version, error: 'Invalid token.' });
-	if (!req.query.text) return res.status(400).json({ version, error: 'The parameter "text" is required.' });
+app.get('/', (req, res) => {
+	return send(res, 200, { version });
+});
+
+app.get('/speak', async (req, res) => {
+	if (!req.query.token) return send(res, 400, { version, error: 'The parameter "token" is required.' });
+	if (!tokens.includes(req.query.token)) return send(res, 401, { version, error: 'Invalid token.' });
+	if (!req.query.text) return send(res, 400, { version, error: 'The parameter "text" is required.' });
 	try {
 		const client = await soap.createClientAsync('https://www.yodaspeak.co.uk/webservice/yodatalk.php?wsdl');
 		const response = await client.yodaTalkAsync({ inputText: req.query.text });
-		return res.status(200).json({ version, response: response[0].return });
+		return send(res, 200, { version, response: response[0].return });
 	} catch (err) {
-		return res.status(500).json({ version, error: err.message });
+		return send(res, 500, { version, error: err.message });
 	}
 });
 

@@ -1,6 +1,6 @@
 {
 	"name": "yoda-speak-api",
-	"version": "1.0.3",
+	"version": "2.0.0",
 	"description": "Convert text to Yoda Speak.",
 	"main": "index.js",
 	"scripts": {
@@ -28,13 +28,15 @@
 		"node": ">=8.0.0"
 	},
 	"dependencies": {
-		"express": "^4.16.3",
+		"@polka/send-type": "^0.4.0",
+		"dotenv": "^6.0.0",
+		"polka": "^0.4.0",
 		"soap": "^0.25.0"
 	},
 	"devDependencies": {
-		"eslint": "^5.2.0",
-		"eslint-config-amber": "^1.0.3",
-		"eslint-plugin-json": "^1.2.0"
+		"eslint": "^5.4.0",
+		"eslint-config-amber": "^1.1.0",
+		"eslint-plugin-json": "^1.2.1"
 	},
 	"eslintConfig": {
 		"extends": "amber",
