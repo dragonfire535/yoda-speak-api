@@ -25,7 +25,7 @@
 	},
 	"homepage": "https://github.com/dragonfire535/yoda-speak-api#readme",
 	"engines": {
-		"node": ">=8.0.0"
+		"node": ">=8"
 	},
 	"dependencies": {
 		"@polka/send-type": "^0.4.0",
